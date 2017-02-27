@@ -12,7 +12,7 @@ RUN touch ${JBOSS_HOME}/standalone/deployments/i2b2.war.dodeploy
 
 # Ungzip the i2b2 install
 ADD build/i2b2core-src-1708b.tar.gz /opt/i2b2/
-COPY build/standalone.xml /opt/jboss-as-7.1.1.Final/standalone/configuration/
+COPY build/standalone.xml ${JBOSS_HOME}/standalone/configuration/
 
 COPY build/deploy_cells.sh /opt/i2b2/
 RUN chmod +x /opt/i2b2/deploy_cells.sh
